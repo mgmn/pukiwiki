@@ -11,7 +11,7 @@
  */
 
 pre, dl, ol, p, blockquote {
-  line-height:130%;
+  line-height:150%;
 }
 blockquote {
   margin-left:32px;
@@ -23,6 +23,7 @@ body,td {
   margin-right:2%;
   font-size:90%;
   font-family:verdana, arial, helvetica, Sans-Serif;
+  overflow-wrap: break-word;
 }
 textarea {
   box-sizing:border-box;
@@ -57,17 +58,17 @@ a.external-link:not(.external-link-silent)::after {
 h1, h2 {
   font-family:verdana, arial, helvetica, Sans-Serif;
   color:inherit;
-  background-color:#DDEEFF;
+  background-color:#FFEECC;
   padding:.3em;
   border:0;
   margin:0 0 .5em 0;
 }
 h3 {
   font-family:verdana, arial, helvetica, Sans-Serif;
-  border-bottom:3px solid #DDEEFF;
-  border-top:1px solid #DDEEFF;
-  border-left:10px solid #DDEEFF;
-  border-right:5px solid #DDEEFF;
+  border-bottom:3px solid #FFEECC;
+  border-top:1px solid #FFEECC;
+  border-left:10px solid #FFEECC;
+  border-right:5px solid #FFEECC;
 
   color:inherit;
   background-color:#FFFFFF;
@@ -76,7 +77,7 @@ h3 {
 }
 h4 {
   font-family:verdana, arial, helvetica, Sans-Serif;
-  border-left:18px solid #DDEEFF;
+  border-left:18px solid #FFEECC;
 
   color:inherit;
   background-color:#FFFFFF;
@@ -86,7 +87,7 @@ h4 {
 h5, h6 {
   font-family:verdana, arial, helvetica, Sans-Serif;
   color:inherit;
-  background-color:#DDEEFF;
+  background-color:#FFEECC;
   padding:.3em;
   border:0;
   margin:0 0 .5em 0;
@@ -118,6 +119,7 @@ pre {
   word-wrap:break-word;
   color:black;
   background-color:#F0F8FF;
+  max-width: 900px;
 }
 
 img {
@@ -128,7 +130,7 @@ img {
 ul {
   margin-top:.5em;
   margin-bottom:.5em;
-  line-height:130%;
+  line-height:150%;
 }
 
 em {
@@ -258,43 +260,43 @@ hr.note_hr {
 
 span.size1 {
   font-size:xx-small;
-  line-height:130%;
+  line-height:150%;
   text-indent:0;
   display:inline;
 }
 span.size2 {
   font-size:x-small;
-  line-height:130%;
+  line-height:150%;
   text-indent:0;
   display:inline;
 }
 span.size3 {
   font-size:small;
-  line-height:130%;
+  line-height:150%;
   text-indent:0;
   display:inline;
 }
 span.size4 {
   font-size:medium;
-  line-height:130%;
+  line-height:150%;
   text-indent:0;
   display:inline;
 }
 span.size5 {
   font-size:large;
-  line-height:130%;
+  line-height:150%;
   text-indent:0;
   display:inline;
 }
 span.size6 {
   font-size:x-large;
-  line-height:130%;
+  line-height:150%;
   text-indent:0;
   display:inline;
 }
 span.size7 {
   font-size:xx-large;
-  line-height:130%;
+  line-height:150%;
   text-indent:0;
   display:inline;
 }
@@ -466,6 +468,28 @@ div#preview {
 img#logo {
   float:left;
   margin-right:20px;
+}
+
+/* quotation > */
+blockquote{
+	background-color: #fff9f0;
+	border-left: 4px solid #ffaa66;
+	padding-left: .4em;
+}
+blockquote blockquote{
+	background-color: #f9fff0;
+	border-left: 4px solid #66aa66;
+	padding-left: .4em;
+}
+blockquote blockquote blockquote{
+	background-color: #f0f9ff;
+	border-left: 4px solid #66aaff;
+	padding-left: .4em;
+}
+blockquote blockquote blockquote blockquote{
+	background-color: #fefefe;
+	border-left: 4px solid #cccccc;
+	padding-left: .4em;
 }
 
 /* aname.inc.php */
@@ -762,6 +786,29 @@ tr.bugtrack_state_undef td {
     max-width:95%;
     height:auto;
   }
+
+  /* quotation > */
+	blockquote{
+		background-color: #fff9f0;
+		border-left: 2px solid #ffaa66;
+		padding-left: .4em;
+		margin:0 8px;
+	}
+	blockquote blockquote{
+		background-color: #f9fff0;
+		border-left: 2px solid #66aa66;
+		padding-left: .4em;
+	}
+	blockquote blockquote blockquote{
+		background-color: #f0f9ff;
+		border-left: 2px solid #66aaff;
+		padding-left: .4em;
+	}
+	blockquote blockquote blockquote blockquote{
+		background-color: #fefefe;
+		border-left: 2px solid #cccccc;
+		padding-left: .4em;
+	}
 
   ._p_tracker_form th,._p_tracker_form td {
     display:block;

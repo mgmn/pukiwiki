@@ -12,8 +12,8 @@
 // Settings (define before here, if you want)
 
 // Set site identities
-$_IMAGE['skin']['logo']     = 'pukiwiki.png';
-$_IMAGE['skin']['favicon']  = ''; // Sample: 'image/favicon.ico';
+$_IMAGE['skin']['logo']     = 'v2c.png';
+$_IMAGE['skin']['favicon']  = 'favicon.ico'; // Sample: 'image/favicon.ico';
 
 // SKIN_DEFAULT_DISABLE_TOPICPATH
 //   1 = Show reload URL
