@@ -15,7 +15,7 @@ define('PLUGIN_S_NAMES_COUNTER_DIR', 'shortener_counter');
 define('PLUGIN_S_PAGEID_LENGTH', 10);
 
 // virtual query prefix "/${PLUGIN_S_VIRTUAL_QUERY_PREFIX}91aa88d26e";
-define('PLUGIN_S_VIRTUAL_QUERY_PREFIX', '?cmd=s&k=');
+define('PLUGIN_S_VIRTUAL_QUERY_PREFIX', '?&');
 
 // page name minimum length   
 define('PLUGIN_S_PAGENAME_MININUM_LENGTH', 20);
