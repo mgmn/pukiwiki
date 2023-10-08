@@ -53,7 +53,7 @@ if (arg_check('read') && exist_plugin_convert('rightbar')) {
 }
 
 // ParaEdit
-if(exist_plugin('paraedit') && ! $is_freeze) {
+if (arg_check('read') && ! $is_freeze && exist_plugin('paraedit')) {
 	$body = _plugin_paraedit_mkeditlink($body);
  }
 // ------------------------------------------------------------
