@@ -19,7 +19,7 @@ $_IMAGE['skin']['favicon']  = ''; // Sample: 'image/favicon.ico';
 //   1 = Show reload URL
 //   0 = Show topicpath
 if (! defined('SKIN_DEFAULT_DISABLE_TOPICPATH'))
-	define('SKIN_DEFAULT_DISABLE_TOPICPATH', 1); // 1, 0
+	define('SKIN_DEFAULT_DISABLE_TOPICPATH', 0); // 1, 0
 
 // Show / Hide navigation bar UI at your choice
 // NOTE: This is not stop their functionalities!
@@ -93,11 +93,16 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
 
 <?php if ($is_page) { ?>
  <?php if(SKIN_DEFAULT_DISABLE_TOPICPATH) { ?>
-   <a href="<?php echo $link['canonical_url'] ?>"><span class="small"><?php echo $link['canonical_url'] ?></span></a>
+   <span class="small">
+   <?php require_once(PLUGIN_DIR . 's.inc.php'); echo plugin_s_convert_get_short_link(); ?>
+   </span>
  <?php } else { ?>
    <span class="small">
    <?php require_once(PLUGIN_DIR . 'topicpath.inc.php'); echo plugin_topicpath_inline(); ?>
    </span>
+   <div class="small">
+   <?php require_once(PLUGIN_DIR . 's.inc.php'); echo plugin_s_convert_get_short_link(); ?>
+   </div>
  <?php } ?>
 <?php } ?>
 
