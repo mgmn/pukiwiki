@@ -51,6 +51,11 @@ $rightbar = FALSE;
 if (arg_check('read') && exist_plugin_convert('rightbar')) {
 	$rightbar = do_plugin_convert('rightbar');
 }
+
+// ParaEdit
+if (arg_check('read') && ! $is_freeze && exist_plugin('paraedit')) {
+	$body = _plugin_paraedit_mkeditlink($body);
+ }
 // ------------------------------------------------------------
 // Output
 
@@ -159,7 +164,7 @@ function _navigator($key, $value = '', $javascript = ''){
 <?php echo $hr ?>
 
 <div id="contents">
- <div id="body"><?php echo $body ?></div>
+<div id="body"><?php echo $body ?></div>
 <?php if ($menu) { ?>
  <div id="menubar"><?php echo $menu ?></div>
 <?php } ?>
