@@ -56,11 +56,7 @@ GPL2 (GNU General Public License version 2)
 // 編集リンクの文字列・スタイルを指定
 //   %s に URL が入る
 
-// * 文字バージョン ([edit])
-define('_EDIT_LINK', '<span style="float:right; font-size: small; font-weight: lighter; padding: 0px 0px 0px 1em; ">[<a href="%s">edit</a>]</span>');
-
-// * 画像バージョン
-//define('_EDIT_LINK', '<span style="float:right; font-size: small; font-weight: lighter; padding: 0px 0px 0px 1em; "><a href="%s"><img src="' . IMAGE_DIR . 'paraedit.png" style="width:9px;height:9px;" /></a></span>');
+define('_EDIT_LINK', '<span style="float:right; font-size: small; font-weight: lighter; padding: 0px 0px 0px 1em; "><a href="%s"><img src="' . IMAGE_DIR . 'paraedit.png" style="width:9px;height:9px;" /></a></span>');
 
 
 // 編集リンクの挿入箇所を指定
