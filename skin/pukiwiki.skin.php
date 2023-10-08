@@ -83,6 +83,17 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
  <script type="text/javascript" src="skin/search2.js" defer></script>
 
 <?php echo $head_tag ?>
+
+<?php if ($_GET['cmd']=='edit'|| isset($_POST['preview']) || isset($_POST['template']) || $_GET['plugin']=='paraedit' ) { ?>
+<script type="text/javascript" src="skin/jscripts/instag/instag.js"></script>
+<script type="text/javascript">
+	g_insTag.init({
+		theme : "pukiwiki",
+		mode : "textareas",
+		language : "ja_JP.utf8"
+	});
+</script>
+<?php } ?>
 </head>
 <body>
 <?php echo $html_scripting_data ?>
