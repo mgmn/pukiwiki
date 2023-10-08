@@ -78,23 +78,23 @@ class RegionPluginHTMLBuilder
 
 	// ■ ボタンの部分。
 	function buildButtonHtml(){
-		$button = ($this->isopened) ? "-" : "+";
+		$button = ($this->isopened) ? "－" : "＋";
 		// JavaScriptでsummaryrgn1、contentrgn1などといった感じのユニークな変数名を使用。かぶったら一巻の終わりです。万事休す。id指定せずオブジェクト取れるような、なんかよい方法があればいいんだけど。
 		return <<<EOD
-<table cellpadding=1 cellspacing=2><tr>
-<td valign=top>
-	<span id=rgn_button$this->callcount style="cursor:pointer;font:normal 10px ＭＳ Ｐゴシック;border:gray 1px solid;"
+<table cellpadding="1" cellspacing="2" style="width:100%;margin:.5em 0;"><tr>
+<td valign="top" style="width:8px;">
+	<span id="rgn_button$this->callcount" style="cursor:pointer;font:normal 14px monospace;border:gray 1px solid;"
 	onclick="
 	if(document.getElementById('rgn_summary$this->callcount').style.display!='none'){
 		document.getElementById('rgn_summary$this->callcount').style.display='none';
 		document.getElementById('rgn_content$this->callcount').style.display='block';
 		document.getElementById('rgn_bracket$this->callcount').style.borderStyle='solid none solid solid';
-		document.getElementById('rgn_button$this->callcount').innerHTML='-';
+		document.getElementById('rgn_button$this->callcount').innerHTML='－';
 	}else{
 		document.getElementById('rgn_summary$this->callcount').style.display='block';
 		document.getElementById('rgn_content$this->callcount').style.display='none';
 		document.getElementById('rgn_bracket$this->callcount').style.borderStyle='none';
-		document.getElementById('rgn_button$this->callcount').innerHTML='+';
+		document.getElementById('rgn_button$this->callcount').innerHTML='＋';
 	}
 	">$button</span>
 </td>
@@ -105,7 +105,7 @@ EOD;
 	function buildBracketHtml(){
 		$bracketstyle = ($this->isopened) ? "border-style: solid none solid solid;" : "border-style:none;";
 		return <<<EOD
-<td id=rgn_bracket$this->callcount style="font-size:1pt;border:gray 1px;$bracketstyle">&nbsp;</td>
+<td id="rgn_bracket$this->callcount" style="width:4px;font-size:1pt;border:gray 1px;$bracketstyle">&nbsp;</td>
 EOD;
 	}
 
@@ -113,15 +113,15 @@ EOD;
 	function buildSummaryHtml(){
 		$summarystyle = ($this->isopened) ? "display:none;" : "display:block;";
 		return <<<EOD
-<td id=rgn_summary$this->callcount style="color:gray;border:gray 1px solid;$summarystyle">$this->description</td>
+<td id="rgn_summary$this->callcount" style="margin:0;text-align:left;$summarystyle"><span style="color:gray;">$this->description</span></td>
 EOD;
 	}
 
 	// ■ 展開表示しているときの表示内容ヘッダ部分。ここの<td>の閉じタグは endregion 側にある。
 	function buildContentHtml(){
-		$contentstyle = ($this->isopened) ? "display:block;" : "display:none;";
+		$contentstyle = ($this->isopened) ? "display:block;" : "display:none;font-size=75%;";
 		return <<<EOD
-<td valign=top id=rgn_content$this->callcount style="$contentstyle">
+<td valign="top" id="rgn_content$this->callcount" style="margin:0;$contentstyle">
 EOD;
 	}
 
