@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief pukiwiki¸þ¤±¥Æ¡¼¥Þ¥Õ¥¡¥¤¥ë
+ * @brief pukiwikiï¿½ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½ï¿½Þ¥Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½
  *
  * @author
  *
@@ -31,7 +31,7 @@ var InsTag_PukiwikiTheme = {
 		['lang_br_img', 'lang_br_desc', "javascript:g_insTag.insTag('{$form_element_name}','&br;','','');"],
 		['lang_formatted_img', 'lang_formatted_desc', "javascript:g_insTag.insTagMultiLine('{$form_element_name}',' ','');"],
 		['lang_unformat_img', 'lang_unformat_desc', "javascript:g_insTag.removeTagMultiLine('{$form_element_name}',' ','');"],
-		['lang_attach_img', 'lang_attach_desc', "javascript:g_insTag.insTag('{$form_element_name}','#attach','','');"],
+		['lang_attach_img', 'lang_attach_desc', "javascript:g_insTag.insTag('{$form_element_name}','&attachref','','');"],
 		['lang_facemark_img', 'lang_facemark_desc', "javascript:t=new Array;t['file']='facemark.htm';t['width']=225+(g_insTag.isOpera?40:0);t['height']=200;g_insTag.openWindow(t,{form_element_name : '{$form_element_name}', inline : 'yes'});"],
 //		['rowseparator', '', ""],
 		['formatselect', '', ""]
