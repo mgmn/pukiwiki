@@ -33,7 +33,7 @@
 ini_set('upload_max_filesize','2M');
 
 // max file size for upload on script of PukiWiki(default 1MB)
-define('MAX_FILESIZE',1000000);
+define('MAX_FILESIZE',2000000);
 
 // 管理者だけが添付ファイルをアップロードできるようにする
 define('ATTACHREF_UPLOAD_ADMIN_ONLY',FALSE); // FALSE or TRUE
