@@ -68,7 +68,7 @@ function plugin_pcomment_convert()
 	global $_pcmt_messages;
 
 	$params = array(
-		'noname'=>FALSE,
+		'noname'=>TRUE,
 		'nodate'=>FALSE,
 		'below' =>FALSE,
 		'above' =>FALSE,
