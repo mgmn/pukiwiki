@@ -103,7 +103,10 @@ function plugin_aname_tag($args = array(), $convert = TRUE)
 	$id = htmlsc($id); // Insurance
 	$class   = $f_super ? 'anchor_super' : 'anchor';
 	$attr_id = $f_noid  ? '' : ' id="' . $id . '"';
-	$url     = $f_full  ? get_page_uri($vars['page']) : '';
+	if($f_full){
+		require_once(PLUGIN_DIR . 's.inc.php');
+		$url = plugin_s_inline_get_short_url();
+	}else{ $url = ''; }
 	$astyle = '';
 	if ($body != '') {
 		$href  = ' href="' . $url . '#' . $id . '"';

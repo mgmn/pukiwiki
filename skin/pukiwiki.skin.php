@@ -19,7 +19,7 @@ $_IMAGE['skin']['favicon']  = ''; // Sample: 'image/favicon.ico';
 //   1 = Show reload URL
 //   0 = Show topicpath
 if (! defined('SKIN_DEFAULT_DISABLE_TOPICPATH'))
-	define('SKIN_DEFAULT_DISABLE_TOPICPATH', 1); // 1, 0
+	define('SKIN_DEFAULT_DISABLE_TOPICPATH', 0); // 1, 0
 
 // Show / Hide navigation bar UI at your choice
 // NOTE: This is not stop their functionalities!
@@ -51,6 +51,11 @@ $rightbar = FALSE;
 if (arg_check('read') && exist_plugin_convert('rightbar')) {
 	$rightbar = do_plugin_convert('rightbar');
 }
+
+// ParaEdit
+if (arg_check('read') && ! $is_freeze && exist_plugin('paraedit')) {
+	$body = _plugin_paraedit_mkeditlink($body);
+ }
 // ------------------------------------------------------------
 // Output
 
@@ -69,7 +74,7 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
 <?php if ($nofollow || ! $is_read)  { ?> <meta name="robots" content="NOINDEX,NOFOLLOW" /><?php } ?>
 <?php if ($html_meta_referrer_policy) { ?> <meta name="referrer" content="<?php echo htmlsc(html_meta_referrer_policy) ?>" /><?php } ?>
 
- <title><?php echo $title ?> - <?php echo $page_title ?></title>
+ <title><?php if ($title != $defaultpage) { echo $title . ' - '; } ?><?php echo $page_title ?></title>
 
  <link rel="SHORTCUT ICON" href="<?php echo $image['favicon'] ?>" />
  <link rel="stylesheet" type="text/css" href="<?php echo SKIN_DIR ?>pukiwiki.css" />
@@ -78,6 +83,17 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
  <script type="text/javascript" src="skin/search2.js" defer></script>
 
 <?php echo $head_tag ?>
+
+<?php if ($_GET['cmd']=='edit'|| isset($_POST['preview']) || isset($_POST['template']) || $_GET['plugin']=='paraedit' ) { ?>
+<script type="text/javascript" src="skin/jscripts/instag/instag.js"></script>
+<script type="text/javascript">
+	g_insTag.init({
+		theme : "pukiwiki",
+		mode : "textareas",
+		language : "ja_JP.utf8"
+	});
+</script>
+<?php } ?>
 </head>
 <body>
 <?php echo $html_scripting_data ?>
@@ -88,11 +104,16 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
 
 <?php if ($is_page) { ?>
  <?php if(SKIN_DEFAULT_DISABLE_TOPICPATH) { ?>
-   <a href="<?php echo $link['canonical_url'] ?>"><span class="small"><?php echo $link['canonical_url'] ?></span></a>
+   <span class="small">
+   <?php require_once(PLUGIN_DIR . 's.inc.php'); echo plugin_s_convert_get_short_link(); ?>
+   </span>
  <?php } else { ?>
    <span class="small">
    <?php require_once(PLUGIN_DIR . 'topicpath.inc.php'); echo plugin_topicpath_inline(); ?>
    </span>
+   <div class="small">
+   <?php require_once(PLUGIN_DIR . 's.inc.php'); echo plugin_s_convert_get_short_link(); ?>
+   </div>
  <?php } ?>
 <?php } ?>
 
@@ -159,7 +180,7 @@ function _navigator($key, $value = '', $javascript = ''){
 <?php echo $hr ?>
 
 <div id="contents">
- <div id="body"><?php echo $body ?></div>
+<div id="body"><?php echo $body ?></div>
 <?php if ($menu) { ?>
  <div id="menubar"><?php echo $menu ?></div>
 <?php } ?>
