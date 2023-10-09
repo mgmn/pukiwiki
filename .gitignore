@@ -4,6 +4,8 @@
 /cache
 /counter
 /diff
+/shortener
+/shortener_counter
 
 /attach/*.[0-9]
 /attach/*.log
@@ -12,6 +14,8 @@
 /cache/*.rel
 /counter/*.count
 /counter/*.db
+/shortener/*.txt
+/shortener_counter/*.count
 
 /diff/*.txt
 /wiki/*.txt
