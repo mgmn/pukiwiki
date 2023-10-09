@@ -41,7 +41,7 @@
 ## for URL shortener
 <IfModule mod_rewrite.c>
 	RewriteEngine on
-	RewriteBase /wiki
+	RewriteBase /
 	RewriteCond %{QUERY_STRING} ^&([0-9a-f]+)$
-	RewriteRule ^(.*)$ /wiki/?cmd=s&k=%1
+	RewriteRule ^(.*)$ /?cmd=s&k=%1
 </IfModule>
