@@ -386,9 +386,6 @@ div#menubar ul {
   margin:0 0 0 1em;
   padding:0 0 0 .5em;
 }
-div#menubar ul li {
-  line-height:110%;
-}
 div#menubar h4 {
   font-size:110%;
 }
