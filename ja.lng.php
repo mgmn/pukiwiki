@@ -445,7 +445,8 @@ $_loginform_messages = array(
 	'username' => 'ユーザー名:',
 	'password' => 'パスワード:',
 	'login' => 'ログイン',
-	'invalid_username_or_password' => 'ユーザー名またはパスワードが違います'
+	'invalid_username_or_password' => 'ユーザー名またはパスワードが違います',
+	'anonymous_editing_notice' => 'スパム避けのため、ユーザー名には「“V2C” を小文字で」パスワードには「n|a 氏の Twitter ID」を入力して認証してください。'
 );
 
 ///////////////////////////////////////
