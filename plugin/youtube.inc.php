@@ -33,9 +33,11 @@ function plugin_youtube_convert()
 	if (func_num_args() < 1) return FALSE;
 	$args = func_get_args();
 	$name = trim($args[0]);
-	$body = '<iframe width="640" height="360" src="//www.youtube.com/embed/' .$name .'" frameborder="0" allowfullscreen="true"></iframe>';
+	$body = <<<EOF
+		<iframe src="//www.youtube.com/embed/${name}" frameborder="0" allowfullscreen="true"
+			style="display: inline-block;max-width: 100%;width: 640px;height: fit-content;aspect-ratio: 16/9;"></iframe>
+	EOF;
 	return $body . "\n";
-
 }
 
 
