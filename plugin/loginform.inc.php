@@ -137,6 +137,7 @@ function plugin_loginform_action()
 </table>
 </div>
 <div>
+	<small><?php echo $_loginform_messages['anonymous_editing_notice'] ?></small>
 </div>
 </form>
 </div>
